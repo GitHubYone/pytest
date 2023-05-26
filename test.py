@@ -1,22 +1,14 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-n = 10
-for _ in range(5):
-    # 中点則
-    w = 1 / n
-    a = (np.arange(1, n + 1) - 0.5) * w
-    b = 4.0 / (1.0 + a ** 2)
-    p1 = np.sum(b) * w
-    print(n, p1, np.pi - p1)
+x = np.linspace(-3, 3, 6001)
+y = x ** 3 - x * 3 + 1                   # x3 - 3x + 1
 
-    # 台形則
-    c = np.linspace(0, 1, n + 1)
-    d = 4.0 / (1.0 + c ** 2)
-    p2 = np.trapz(d) * w
-    print(n, p2, np.pi - p2)
+z1 = np.gradient(y, x, edge_order = 2)   # 3x2 - 3
+z2 = np.gradient(z1, x, edge_order = 2)  # 6x
 
-    # シンプソン則
-    p3 = (p1 * 2 + p2) / 3
-    print(n, p3, np.pi - p3)
-    n *= 1
-
+plt.plot(x, y)
+plt.plot(x, z1)
+plt.plot(x, z2)
+# plt.savefig('grad.png', dpi=80)
+plt.show()
