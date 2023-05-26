@@ -5,6 +5,7 @@
 #
 
 # 連結リストクラス
+from icecream import ic
 class LinkedList:
     # セル
     class Cell:
@@ -162,11 +163,11 @@ class FixedList(LinkedList):
 # 簡単なテスト
 if __name__ == '__main__':
     a = LinkedList()
-    print(a)
-    print(len(a))
-    print(a.is_empty())
+    ic(a)
+    ic(len(a))
+    ic(a.is_empty())
     for x in range(5): a.insert(x, x)
-    print(a)
+    ic(a)
     print(len(a))
     print(a.is_empty())
     for x in range(5):

@@ -9,6 +9,20 @@ from math import cos, pi, sin, fabs , e
 class Meter(tk.Frame):
     def __init__(self, master=None, **kw):
         tk.Frame.__init__(self, master, **kw)
+# tk.Frame.__init__(self, master, **kw) は、Meter クラスのコンストラクタ（__init__ メソッド）
+# Meter クラスは、tkinter モジュールの Frame クラスを継承
+# Frame クラスは、ウィンドウ内のコンテナを表すために使用される基本的なウィジェット
+# Meter クラスは、Frame クラスを利用して、メーター（meter）と呼ばれるカスタムウィジェットを作成
+# __init__ メソッドは、クラスのインスタンスが作成される際に呼び出される特殊なメソッドでインスタンスの初期化
+# Meter クラスのコンストラクタは、親クラスである Frame クラスのコンストラクタを呼び出す
+# 具体的に tk.Frame.__init__(self, master, **kw) は、
+# 親クラス Frame のコンストラクタを呼び出しMeterクラスのインスタンスを初期化
+# self は、Meter クラスのインスタンス自体
+# master は、Meter インスタンスが配置される親ウィジェット（通常はウィンドウ）
+# **kw は、キーワード引数を受け取るための構文で、追加のパラメータやオプションを指定
+# これにより、親クラスのコンストラクタに追加の引数を渡す
+# tk.Frame.__init__(self, master, **kw) は、Meter クラスのインスタンスを初期化する際に、
+# 親クラスの Frame クラスのコンストラクタを呼び出す
 
         #初期化
         self.var0 = tk.IntVar(self, 0)
