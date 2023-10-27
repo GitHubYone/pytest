@@ -24,18 +24,18 @@ h = cap_height
 
 while True:
     ret, img = cap.read()
-    img = cv2.resize(img, (frameWidth, frameHeight))
+    #img = cv2.resize(img, (frameWidth, frameHeight))
     #img2 = cv2.flip(img,0)     # 上下反転
-    img2 = cv2.flip(img,1)      # 左右反転
+    #img2 = cv2.flip(img,1)      # 左右反転
     #img2 = cv2.flip(img,-1)    # 上下左右反転
     #img2 = img
     #dst = cv2.rotate(img2, cv2.ROTATE_90_CLOCKWISE)#時計回り90度回転
     #dst = cv2.rotate(img2, cv2.ROTATE_90_COUNTERCLOCKWISE)#反時計回り90度回転
     #dst = cv2.rotate(img2, cv2.ROTATE_180)#180度回転
-    dst = img2
-    dst2 = cv2.resize(dst[60:-60, 80:-80, :], dsize = (w, h))
+    dst = img
+    #dst2 = cv2.resize(dst[60:-60, 80:-80, :], dsize = (w, h))
     #dst2 = dst
-    cv2.imshow('Video', dst2)
+    cv2.imshow('Video', dst)
     #print('ret=', ret)
 
     # qを押すと止まる。
